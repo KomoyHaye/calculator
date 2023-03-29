@@ -1,5 +1,6 @@
 'use strict';
 
+
 exports.calculate = function(req, res) {
   req.app.use(function(err, req, res, next) {
     if (res.headersSent) {
@@ -11,7 +12,7 @@ exports.calculate = function(req, res) {
   });
 
   var operations = {
-    'add':      function(a,b) { return +a + +b },
+    'add': function(a,b) { return +a + +b },// Using + operator to type cast variables as integers in order to prevent string concatenation
     'subtract': function(a,b) { return a - b },
     'multiply': function(a,b) { return a * b },
     'divide':   function(a,b) { return a / b },
